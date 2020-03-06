@@ -46,10 +46,15 @@
 										<td class="small">
 											<php echo substr($product->description, 0, 120) ?>...</td> -->
 										<td width="250">
+<<<<<<< HEAD
 											<!-- <a href='#' class='btn btn-primary' id="btn_edit">Edit</a> -->
 											<a href="<?php echo site_url('user/user_edit') ?>"><i class="fas fa-plus"></i>Ubah</a>
 											<a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+=======
+											<a href='#' class='btn btn-primary' id="btn_edit">Edit</a>
+											<a href="<?php echo base_url() ?>/user/user_delete?id=<?php echo $data->id_user ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+>>>>>>> 08456f4ce3858bd36eb9bfc3adfdc39698365350
 										</td>
 									</tr>
 									<?php endforeach; ?>

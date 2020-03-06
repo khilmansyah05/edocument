@@ -276,7 +276,8 @@ Class User extends CI_Controller {
     }
 
     public function user_delete($id = '') {
-        if(!is_auth()) {redirect('discover/keluar');}
+      if(!is_auth()) {redirect('discover/keluar');}
+      $id = $this->input->get('id');
 
         $id = inject($id);
         $id_user     = simple_decrypt($id);
@@ -289,7 +290,7 @@ Class User extends CI_Controller {
         // if(empty($user)){ redirect('user/user_list');}
 
         if ($id_user !='') {
-            $this->m_user->delete_user($id_user);
+            $this->m_user->delete_user($id);
              $this->session->set_flashdata('message', render_success('Berhasil!', 'Data pengguna telah dihapus.'));
             redirect ('user/user_list');
         }else {
