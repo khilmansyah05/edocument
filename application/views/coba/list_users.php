@@ -10,7 +10,7 @@
 					</div>
 					<div class="card-body">
 
-						<div class="table-responsive">
+						<div class="table-responsive" action='<?php echo $action; ?>'>
 							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
@@ -46,7 +46,8 @@
 										<td class="small">
 											<php echo substr($product->description, 0, 120) ?>...</td> -->
 										<td width="250">
-											<a href='#' class='btn btn-primary' id="btn_edit">Edit</a>
+											<!-- <a href='#' class='btn btn-primary' id="btn_edit">Edit</a> -->
+											<a href="<?php echo site_url('user/user_edit') ?>"><i class="fas fa-plus"></i>Ubah</a>
 											<a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
@@ -60,7 +61,7 @@
 				</div>
 				
 				<script>
-			$('#btn_edit').on('click',function(){
+			$('#deleteConfirm').on('click',function(){
 					console.log("form edit muncul")
 				})
 			</script>

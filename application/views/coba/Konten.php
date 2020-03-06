@@ -180,17 +180,17 @@
             <li class="site-menu-item has-sub">
               <a href="javascript:void(0)">
                 <i class="site-menu-icon wb-calendar" aria-hidden="true"></i>
-                <span class="site-menu-title">Kegiatan</span>
+                <span class="site-menu-title">Dokument</span>
                 <span class="site-menu-arrow"></span>
               </a>
               <ul class="site-menu-sub">
                 <li class="site-menu-item">
-                  <a class="animsition-link" href="<?php echo site_url('event/event_list')?>">
-                    <span class="site-menu-title">Daftar Kegiatan</span>
+                  <a class="animsition-link" href="<?php echo site_url('dokument/dokument_list')?>">
+                    <span class="site-menu-title">Daftar Dokument</span>
                   </a>
                 </li>
                 <li class="site-menu-item">
-                  <a class="animsition-link" href="<?php echo site_url('event/event_input')?>">
+                  <a class="animsition-link" href="<?php echo site_url('dokument/dokument_input')?>">
                     <span class="site-menu-title">Broadcast informasi</span>
                   </a>
                 </li>
