@@ -6,6 +6,7 @@ Class Discover extends CI_Controller {
         $this->load->model('m_login');
         // $this->load->model('m_event');
         $this->load->model('m_user');
+        $this->load->model('m_document');
 
     }
 
@@ -71,6 +72,8 @@ Class Discover extends CI_Controller {
         if(!is_auth(array(1,2,3,4))) { redirect('discover/keluar'); }
 
         // dumper(get_profile());
+        $jdl = $this->input->post('judul');
+        $dvs = $this->input->post('divisi');
 
         $dataku = get_profile();
         // $level = level();
@@ -80,8 +83,10 @@ Class Discover extends CI_Controller {
         if(user_status()==0){
           if ($level == 1){
               $subdata['hasil']     = $this->m_user->get_user_aktif();
+              $subdata['dt']        = $this->m_document->getAllDocument($jdl, $dvs);
               $data['title']        ='Selamat Datang '.$dataku['nama'];
               $data['content']      = render_view('coba/dashboard',$subdata,true);
+              
               render_view('coba/konten', $data);
           }else if ($level == 2){
               // $subdata['hasil']        = $this->m_event->get_all_event();
