@@ -4,6 +4,11 @@
   $meta_description = (ISSET($meta_description) && $meta_description != "")?$meta_description : "";
   $breadcrumb = (ISSET($breadcrumb) && $breadcrumb != "")?$breadcrumb : "";
   $content = (ISSET($content) && $content != "")?$content : "";
+  // $dt = (ISSET($dt) && $dt != "")?$dt : "";
+
+  // foreach ($dt as $datadoc) {
+  //   var_dump($datadoc['judul']);
+  // }
  ?>
 
 <!DOCTYPE html>

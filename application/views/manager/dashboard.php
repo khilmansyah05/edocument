@@ -14,6 +14,19 @@
       <br/>
       <h4 class="example-title">Dashboard Manager</h4>
       <br/>
+
+      
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title></title>
+      </head>
+      <body>
+      
+      </body>
+      </html>
+
       <div class="example example-responsive">
         <div class="w-sm-400" id="exampleFlotFullBg"></div>
       </div>
