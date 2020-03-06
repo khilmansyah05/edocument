@@ -47,7 +47,7 @@ class M_user extends CI_Model{
 	
 	public function getAll()
     {
-        return $this->db->query("SELECT * FROM user")->result();
+        return $this->db->query("SELECT * FROM user WHERE user_status = '0'")->result();
     }
 
 	public function delete_user($id_user){
