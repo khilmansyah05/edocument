@@ -207,7 +207,8 @@ Class User extends CI_Controller {
                 redirect('user/user_edit/'.$id);
             } else {
 
-            $nama           = inject($this->input->post('nama'));
+            $id_user        = inject($this->input->post('id_user'));
+			$nama           = inject($this->input->post('nama'));
 			$NIK            = inject($this->input->post('NIK'));
 			$username       = inject($this->input->post('username'));
 			$password       = inject($this->input->post('password'));
@@ -216,6 +217,7 @@ Class User extends CI_Controller {
             $user_status    = inject($this->input->post('user_status'));
 
               $data           = array(
+									'id_user'       => $id_user,
 									'nama'          => $nama,
 									'NIK'           => $NIK,
 									'username'      => $username,

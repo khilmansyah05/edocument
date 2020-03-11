@@ -149,7 +149,7 @@
           <ul class="site-menu" data-plugin="menu" style="transform: translate3d(0px, 0px, 0px);">
             <li class="site-menu-category">ADMIN APS</li>
             <li class="site-menu-item has-sub">
-              <a  href="<?php echo site_url('user/user_list')?>">
+              <a  href="<?php echo site_url('discover/dashboard')?>">
                 <i class="site-menu-icon wb-home" aria-hidden="true"></i>
                 <span class="site-menu-title">Beranda</span>
               </a>
@@ -196,7 +196,7 @@
                 </li>
                 <li class="site-menu-item">
                   <a class="animsition-link" href="<?php echo site_url('dokument/dokument_input')?>">
-                    <span class="site-menu-title">Broadcast informasi</span>
+                    <span class="site-menu-title">Upload Dokument</span>
                   </a>
                 </li>
                 <!-- <li class="site-menu-item">

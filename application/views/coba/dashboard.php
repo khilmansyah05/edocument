@@ -51,8 +51,9 @@
           <tr>
             <td colspan="2">
               <center>
-                <!-- <a href="#" class="btn btn-info">Search</a> -->
-                <input type="submit" name="submit" id="submit" class="btn btn-info">
+                <!-- <a href="#" class="btn btn-info">Search</a>
+                <input type="submit" name="submit" id="submit" class="btn btn-info"> -->
+				<button type='submit' class='btn btn-primary'>Search</button>
               </center>
             </td>
           </tr>
@@ -64,7 +65,9 @@
       <!-- table hasil -->
       <div class="card">
         <div class="card-header bg-info">
-          <p>Tabel </p>
+		<center>
+          <p>DAFTAR DOKUMENT</p>
+		 </center>
         </div>
         <div class="card-body">
           <table class="table">
@@ -75,30 +78,35 @@
                 <th>NAMA FILE</th>
                 <th>DIVISI</th>
                 <th>FILE</th>
+				<th>ACTION</th>
               </tr>
             </thead>
 
             <tbody>
               <?php 
                 foreach ($dt as $datadoc) {
-                  $no = 1;
+                  
                     ?>
 
                       <tr>
-                        <td><?php echo $no ?></td>
+                        <td><?php echo $datadoc->id ?></td>
                         <td><?php echo $datadoc->judul ?></td>
-                        <td><?php echo $datadoc->nama_file ?></td>
+                        <td><?php echo $datadoc->nama_doc ?></td>
                         <td><?php echo $datadoc->divisi ?></td>
                         <td><?php echo $datadoc->file ?></td>
+						<td width="250">
+							<a href='<?php echo site_url('dokument/dokument_delete/') ?>' class='btn btn-primary'>Lihat</a>
+							<a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Download</a>
+						</td>
                       </tr>
 
                     <?php
-                    $no+=1;
+                    
                 }
                ?>
             </tbody>
 
-            <tfoot>
+            <!-- <tfoot>
               <tr>
                 <th>NO</th>
                 <th>JUDUL</th>
@@ -106,7 +114,7 @@
                 <th>DIVISI</th>
                 <th>FILE</th>
               </tr>
-            </tfoot>
+            </tfoot> -->
           </table>
         </div>
       </div>

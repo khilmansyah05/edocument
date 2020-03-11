@@ -46,7 +46,7 @@
 										<td class="small">
 											<php echo substr($product->description, 0, 120) ?>...</td> -->
 										<td width="250">
-											<a href='#' class='btn btn-primary' id="btn_edit">Edit</a>
+											<!-- <a href= "<?php echo base_url() ?>user/user_edit?id=<?php echo $data->id_user ?>" class='btn btn-primary'>Edit</a>-->
 											<a href="<?php echo base_url() ?>/user/user_delete?id=<?php echo $data->id_user ?>" class="btn btn-danger">Hapus</a>
 										</td>
 									</tr>
