@@ -43,8 +43,9 @@
 						</td>
 						<td width="250">
 							<a href='<?php echo site_url('dokument/detail/') ?>' class='btn btn-primary btn-sm'>Lihat</a>
-							<a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')" href="#!" class="btn btn-danger btn-sm">Download</a>
-						</td>
+							<!-- <a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')" href="#!" class="btn btn-danger btn-sm">Download</a> -->
+              <a href="<?php echo base_url()?>uploads/dokument/<?php echo $datadoc->file ?>" class="btn btn-danger">Donwload</a>
+            </td>
                       </tr>
 
                     <?php

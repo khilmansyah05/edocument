@@ -46,6 +46,7 @@
   <link href="<?php echo base_url('assets/fonts/weather-icons/weather-icons.css');?>" rel="stylesheet" />
   <link href="<?php echo base_url('assets/fonts/weather-icons/weather-icons.css');?>" rel="stylesheet" />
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <!--[if lt IE 9]>
     <script src="../../global/vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->

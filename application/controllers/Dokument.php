@@ -79,15 +79,17 @@ Class Dokument extends CI_Controller {
           $path                       = $config['upload_path'];
           $this->load->library('upload', $config);
 		  
-		      // $uploadData = $this->upload->data();
+		      $this->upload->data();
 		  
 	
-			// $uploadData = $this->upload->do_upload('file');
+          $this->upload->do_upload('file');
+          
+          $up = $this->upload->data();
 		  
-		  $data           = array(
+		       $data           = array(
                                 'judul'      		=> $judul,
                                 'nama_doc'          => $nama_doc,
-                                'file'            	=> $_FILES['file']['name'],
+                                'file'            	=> $up["file_name"],
                                 'divisi'      		=> $divisi,
                                 'create_date'       => $today,
                                 'create_by'         => $profile['id_user'],
@@ -105,6 +107,7 @@ Class Dokument extends CI_Controller {
               $this->session->set_flashdata('last_posting', $_POST);
               redirect('dokument/dokument_input');
             }
+          var_dump($up);
           
           
         }
