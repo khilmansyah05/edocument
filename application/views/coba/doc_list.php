@@ -39,7 +39,26 @@
                         <td><?php echo $datadoc->nama_doc ?></td>
                         <td><?php echo $datadoc->divisi ?></td>
 						<td>
-							<img src="<?php echo base_url('uploads/dokument/'.$datadoc->file) ?>" width="64" />
+            <?php
+              $ext = pathinfo($datadoc->file, PATHINFO_EXTENSION);
+              if($datadoc->file != ""){
+                if($ext == "jpg" or $ext == "png" or $ext == "jpeg"){
+                  ?>
+                <img src="<?php echo base_url('uploads/dokument/'.$datadoc->file) ?>" width="64" />
+                <?php
+                }
+                else if($ext == "pdf"){
+                  ?>
+                  <img src="<?php echo base_url('uploads/dokument/pdf.png') ?>" width="64" />
+                  <?php
+                }
+              }
+              else{
+                ?>
+                <img src="<?php echo base_url('uploads/dokument/broken.jpg  ') ?>" width="64" />
+                <?php
+              }
+            ?>
 						</td>
 						<td width="250">
 							<a href='<?php echo site_url('dokument/detail/') ?>' class='btn btn-primary btn-sm'>Lihat</a>

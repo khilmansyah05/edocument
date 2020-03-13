@@ -75,28 +75,28 @@ Class Dokument extends CI_Controller {
           $config['allowed_types']  = 'pdf|jpg|png';
           $config['max_size']       = 100000;
           $config['overwrite']      = false;
-          $config['encrypt_name']   = true;
+          // $config['encrypt_name']   = true;
           $path                       = $config['upload_path'];
           $this->load->library('upload', $config);
 		  
 		      $this->upload->data();
 		  
 	
-          $this->upload->do_upload('file');
+          // $this->upload->do_upload('file');
           
-          $up = $this->upload->data();
-		  
-		       $data           = array(
-                                'judul'      		=> $judul,
-                                'nama_doc'          => $nama_doc,
-                                'file'            	=> $up["file_name"],
-                                'divisi'      		=> $divisi,
-                                'create_date'       => $today,
-                                'create_by'         => $profile['id_user'],
-                                'doc_status'      	=> $doc_status,
-          );
-
-          if ($this->m_dokument->insert_dokument($data)) {
+          if ($this->upload->do_upload('file')) {
+            $up = $this->upload->data();
+        
+             $data           = array(
+                                  'judul'      		=> $judul,
+                                  'nama_doc'          => $nama_doc,
+                                  'file'            	=> $up["file_name"],
+                                  'divisi'      		=> $divisi,
+                                  'create_date'       => $today,
+                                  'create_by'         => $profile['id_user'],
+                                  'doc_status'      	=> $doc_status,
+            );
+            $this->m_dokument->insert_dokument($data);  
             
             $this->session->set_flashdata('message', render_success('Input Berhasil', "Berhasil Menambahkan Dokument"));
             redirect('dokument/dokument_input');
