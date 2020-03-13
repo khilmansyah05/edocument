@@ -63,12 +63,13 @@ Class Dokument extends CI_Controller {
               redirect('dokument/dokument_input');*/
         else{
           $judul          = inject($this->input->post('judul'));
-		  $tahun = date('Y');
+		      $tahun = date('Y');
           $nama_doc           = inject($this->input->post('nama_doc'));
-		  $nama_doc = $nama_doc." - ".$tahun." - ".$judul;
-          $file              = inject($this->input->post('file'));
-		  $divisi              = inject($this->input->post('divisi'));
-          //$doc_status        = 0;
+		      $nama_doc = $nama_doc." - ".$tahun." - ".$judul;
+          // $file              = inject($this->input->post('file'));
+          $file = $this->input->post('file');
+		      $divisi              = inject($this->input->post('divisi'));
+          $doc_status        = 0;
 
           $config['upload_path']    = './uploads/dokument';
           $config['allowed_types']  = 'pdf|jpg|png';
@@ -78,26 +79,20 @@ Class Dokument extends CI_Controller {
           $path                       = $config['upload_path'];
           $this->load->library('upload', $config);
 		  
-		  $uploadData = $this->upload->data();
+		      // $uploadData = $this->upload->data();
 		  
 	
-			$this->upload->do_upload('file');
-            $file = $uploadData['file_name'];
+			// $uploadData = $this->upload->do_upload('file');
 		  
 		  $data           = array(
                                 'judul'      		=> $judul,
                                 'nama_doc'          => $nama_doc,
-                                'file'            	=> $file,
+                                'file'            	=> $_FILES['file']['name'],
                                 'divisi'      		=> $divisi,
-                                //'create_date'       => $today,
-                                //'create_by'         => $profile['id_user'],
-                                //'doc_status'      	=> $doc_status,
+                                'create_date'       => $today,
+                                'create_by'         => $profile['id_user'],
+                                'doc_status'      	=> $doc_status,
           );
-			
-			
-			
-			
-            //$this->m_dokument->insert_dokument($data);
 
           if ($this->m_dokument->insert_dokument($data)) {
             
@@ -105,11 +100,12 @@ Class Dokument extends CI_Controller {
             redirect('dokument/dokument_input');
 			
             }
-			else {
+			    else {
               $this->session->set_flashdata('message', render_error('Peringatan!', 'Gagal mengupload file'));
               $this->session->set_flashdata('last_posting', $_POST);
               redirect('dokument/dokument_input');
             }
+          
           
         }
       }

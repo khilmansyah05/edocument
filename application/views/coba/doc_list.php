@@ -42,8 +42,8 @@
 							<img src="<?php echo base_url('uploads/dokument/'.$datadoc->file) ?>" width="64" />
 						</td>
 						<td width="250">
-							<a href='<?php echo site_url('dokument/detail/') ?>' class='btn btn-primary'>Lihat</a>
-							<a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Download</a>
+							<a href='<?php echo site_url('dokument/detail/') ?>' class='btn btn-primary btn-sm'>Lihat</a>
+							<a onclick="deleteConfirm('<?php echo site_url('user/user_delete/') ?>')" href="#!" class="btn btn-danger btn-sm">Download</a>
 						</td>
                       </tr>
 
